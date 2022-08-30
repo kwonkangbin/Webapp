@@ -10,7 +10,6 @@ import com.hitouch.wikibook.BrowserActivity;
 import com.hitouch.wikibook.HttpUrl;
 import com.hitouch.wikibook.BrowserActivity.WebClient;
 
-import android.support.v7.app.ActionBarActivity;
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.content.DialogInterface;
@@ -61,7 +60,7 @@ public class BrowserActivity extends Activity {
         if ((keyCode == KeyEvent.KEYCODE_BACK)) {
             AlertDialog.Builder d = new AlertDialog.Builder(this);
             d.setTitle("프로그램을 종료 하시겠습니까?");
-            d.setMessage("'기술 노트' \n https://wikidocs.net/22308 으로 접속하시면 컴퓨터에서 편리하게 정보를 보실 수가 있습니다. 구글 스토어에서 별점/리뷰로 응원해주시면 더욱 감사하겠습니다~! \n\n종료하시려면 '예' 버튼을 눌러주세요.");
+            d.setMessage("종료하시려면 '예' 버튼을 눌러주세요.");
             d.setIcon(R.drawable.ic_launcher);
             d.setPositiveButton("아니요", new DialogInterface.OnClickListener() {
                 @Override
@@ -69,17 +68,6 @@ public class BrowserActivity extends Activity {
                     // TODO Auto-generated method stub
                     //onStop();
                     dialog.cancel();
-                }
-            });
-
-            d.setNeutralButton("리뷰/별점가기", new DialogInterface.OnClickListener() {
-
-                @Override
-                public void onClick(DialogInterface dialog, int which) {
-                    // TODO Auto-generated method stub
-                    Intent intent = new Intent(Intent.ACTION_VIEW);
-                    intent.setData(Uri.parse("market://details?id=com.hitouch.wikibook"));
-                    startActivity(intent);
                 }
             });
 
